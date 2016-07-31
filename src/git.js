@@ -46,6 +46,17 @@
    };
 
    /**
+    * Sets the working directory, should be a 'git' directory or a directory that will be initiated to a 'git' directory
+    *
+    * @param {string} directory
+    * @returns {Git}
+    */
+   Git.prototype.changeWorkingDirectory = function (directory) {
+      this._baseDir = directory;
+      return this;
+   }
+
+   /**
     * Sets a handler function to be called whenever a new child process is created, the handler function will be called
     * with the name of the command being run and the stdout & stderr streams used by the ChildProcess.
     *
